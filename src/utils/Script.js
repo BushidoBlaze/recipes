@@ -1,4 +1,6 @@
-function updateYear(date) {
-    document.getElementById('updateYearDate').textContent = String(date.getFullYear());
+function getDateYear(year) {
+  document.getElementById("getDateYear").textContent = String(
+    year.getFullYear(),
+  );
 }
-setInterval(() => updateYear(new Date()), 1000);
+setInterval(() => getDateYear(new Date()), 1000);
