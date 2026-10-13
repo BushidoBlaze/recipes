@@ -1,15 +1,32 @@
-# Recipes
+# Сайт для хранения и обмена рецептами
 
-A site for searching and posting your culinary recipes.
-You can search for recipes by keywords of the dish or its full name.
-(Does not perform most of the functionality for this period of time)
+## Стек технологий
+![Tech stack](https://skillicons.dev/icons?i=html,css,ts,vite)
 
-## Содержание
+## Запуск
+- `npm install`: установить зависимости
+- `npm run dev`: сайт для разработки
+- `npm run build`: сборка, результат в `dist/`
+- `npm run preview`: посмотреть собранную версию
 
-- [Технологии](#технологии)
+## Что уже есть
+1. Главная страница;
+2. Три модальных окна (Окна загружаются из отдельных HTML-файлов).
 
-## Технологии
+## Что планируется добавить (по функционалу)
+1. Поиск рецептов - (данные, список, фильтр);
+2. Сортировка;
+3. Избранное
+4. Добавление рецепта;
+5. Адаптив.
 
-- HTML
-- CSS
-- JavaScript
+## Что планируется добавить (по страницам)
+1. Рецепты;
+2. Рецепт;
+3. Избранное;
+4. Добавить рецепт;
+5. Кастомная страница - 404.
+
+
+## Лицензия
+**Учебный проект** - *Ссылка на макет в [Figma](https://www.figma.com/file/tnRBbaXTwqsQwz77dh0QYs/Recipes-_-Cooking-Website-Homepage)*
