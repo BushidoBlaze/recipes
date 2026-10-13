@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="./src/components/header/header.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./src/components/footer/footer.css" />
+
+    <link rel="stylesheet" href="./src/assets/styles/global.css" />
+    <link rel="stylesheet" href="./src/assets/fonts/fonts.css" />
+
+    <!--Модалки-->
+    <link rel="stylesheet" href="./src/components/forms/loginForm/Login.css" />
+    <link
+      rel="stylesheet"
+      href="./src/components/forms/loginToProfileForm/LoginToProfile.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./src/components/forms/registrationForm/Registration.css"
+    />
+
+    <title>Recipes</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="navigation">
+          <div class="navigation-logo">
+            <img src="./src/assets/images/icons/Logo.svg" alt="Логотип сайта" />
+          </div>
+          <div class="navigation-priority-left">
+            <div class="navigation-links">
+              <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Рецепты</a></li>
+                <li><a href="#">Избранное</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="navigation-priority-right">
+            <div class="navigation-login">
+              <ul>
+                <li>
+                  <span>
+                    <img
+                      src="./src/assets/images/icons/Login.svg"
+                      alt="Войти"
+                    />
+                    <a id="loginForm" href="#"> Войти </a>
+                  </span>
+                  <div class="navigation-dropdown">
+                    <span>
+                      <a id="registerForm" href="#">
+                        <b>Зарегистрироваться</b>
+                      </a>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="initial-form-container">
+        <div class="initial-form-pictures">
+          <img
+            src="./src/assets/images/Background-image.png"
+            alt="Фоновая картинка"
+          />
+        </div>
+        <div class="initial-form-section">
+          <div class="initial-form-text">
+            <h1>Готовь и делись <br />рецептами</h1>
+            <p>
+              Никаких кулинарных книг и блокнотов! Храни все <br />
+              любимые рецепты в одном месте.
+            </p>
+          </div>
+          <div class="initial-form-Btn">
+            <button class="add-recipe-Btn" id="loginToProfileForm">
+              + Добавить рецепт
+            </button>
+            <button class="login-Btn" id="loginForm">Войти</button>
+          </div>
+        </div>
+      </div>
+      <div class="cooking-tags-container">
+        <div class="cooking-tags-title">
+          <h1>Умная сортировка по тегам</h1>
+          <p>
+            Добавляй рецепты и указывай наиболее популярные теги. Это позволит
+            <br />
+            быстро находить любые категории.
+          </p>
+        </div>
+        <div class="cooking-tags-cards">
+          <section>
+            <span>
+              <img
+                src="./src/assets/images/icons/Simple-dish.svg"
+                alt="Простые блюда"
+              />
+            </span>
+            <h2>Простые блюда</h2>
+            <p>Время приготовления <br />таких блюд не более 1 <br />часа</p>
+          </section>
+          <section>
+            <span>
+              <img
+                src="./src/assets/images/icons/Children.svg"
+                alt="Детские блюда"
+              />
+            </span>
+            <h2>Детское</h2>
+            <p>Самые полезные блюда которые можно детям любого возраста</p>
+          </section>
+          <section>
+            <span>
+              <img
+                src="./src/assets/images/icons/Kitchen.svg"
+                alt="Блюда от шеф-повара"
+              />
+            </span>
+            <h2>От шеф-поваров</h2>
+            <p>
+              Требуют умения, <br />времени и терпения, <br />зато как в
+              ресторане
+            </p>
+          </section>
+          <section>
+            <span>
+              <img
+                src="./src/assets/images/icons/Holiday.svg"
+                alt="Простые блюда"
+              />
+            </span>
+            <h2>Простые блюда</h2>
+            <p>
+              Чем удивить гостей, <br />чтобы все были сыты за праздничным
+              столом
+            </p>
+          </section>
+        </div>
+      </div>
+      <div class="pumpkin-soup-container">
+        <div class="pumpkin-soup-picture">
+          <img
+            src="./src/assets/images/Pumpkin-soup.jpeg"
+            alt="Тыквенный суп"
+          />
+        </div>
+        <div class="pumpkin-soup-text">
+          <h1>Тыквенный Супчик <br />На Кокосовом Молоке</h1>
+          <p>
+            Если у вас осталась тыква, и вы не знаете что с ней <br />сделать,
+            то это решение для вас! Ароматный,<br />
+            согревающий суп-пюре на кокосовом молоке. Можно <br />даже в Пост!
+          </p>
+        </div>
+        <div class="timer-heart-icons">
+          <img src="./src/assets/images/icons/Heart.svg" alt="Лайки" />
+          <p>356</p>
+
+          <img src="./src/assets/images/icons/Timer.svg" alt="Время" />
+          <p>35 минут</p>
+        </div>
+      </div>
+      <div class="search-recipes-container">
+        <div class="search-recipes-text">
+          <h1>Поиск рецептов</h1>
+          <p>Введите примерное название блюда, а мы по тегам найдем его</p>
+        </div>
+        <div class="search-input-field">
+          <div class="input-button-group">
+            <label for="recipe-search"></label>
+            <input
+              id="recipe-search"
+              name="query"
+              placeholder="Название блюда...."
+            />
+            <button>Поиск</button>
+          </div>
+          <div class="hot-words">
+            <p>Мясо</p>
+            <p>Деликатесы</p>
+            <p>Пироги</p>
+            <p>Рыба</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--модальные окна-->
+    <div class="login-form-overlay" id="loginOverlay" style="display: none">
+      <div id="login"></div>
+    </div>
+
+    <div
+      class="registration-form-overlay"
+      id="registerOverlay"
+      style="display: none"
+    >
+      <div id="register"></div>
+    </div>
+
+    <div
+      class="auth-form-overlay"
+      id="loginToProfileOverlay"
+      style="display: none"
+    >
+      <div id="loginToProfile"></div>
+    </div>
+
+    <footer>
+      <nav>
+        <div class="footer">
+          <img src="./src/assets/images/icons/Logo.svg" alt="Логотип сайта" />
+          <b>© Recipes <span id="getCurrentYear"></span></b>
+        </div>
+      </nav>
+    </footer>
+
+    <script type="module" src="./src/utils/modals/openModals.ts"></script>
+    <script type="module" src="./src/utils/getCurrentYear/getCurrentYear.ts"></script>
+  </body>
+</html>
