@@ -26,43 +26,51 @@
     <title>Recipes</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="navigation">
-          <div class="navigation-logo">
-            <img src="./src/assets/images/icons/Logo.svg" alt="Логотип сайта" />
-          </div>
-          <div class="navigation-priority-left">
-            <div class="navigation-links">
-              <ul>
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Рецепты</a></li>
-                <li><a href="#">Избранное</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="navigation-priority-right">
-            <div class="navigation-login">
-              <ul>
-                <li>
-                  <span>
-                    <img
-                      src="./src/assets/images/icons/Login.svg"
-                      alt="Войти"
-                    />
-                    <a id="loginForm" href="#"> Войти </a>
-                  </span>
-                  <div class="navigation-dropdown">
-                    <span>
-                      <a id="registerForm" href="#">
-                        <b>Зарегистрироваться</b>
-                      </a>
-                    </span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
+    <header class="header">
+      <nav class="header__nav" aria-label="Основная навигация">
+        <!-- Логотип -->
+        <a href="./index.html" class="header__logo-link">
+          <img
+            class="header__logo"
+            src="./src/assets/images/icons/Logo.svg"
+            alt="Логотип сайта"
+          />
+        </a>
+
+        <!-- Список страниц -->
+        <ul class="header__menu">
+          <li class="header__menu-item">
+            <a class="header__link" href="#">Главная</a>
+          </li>
+          <li class="header__menu-item">
+            <a class="header__link" href="#">Рецепты</a>
+          </li>
+          <li class="header__menu-item">
+            <a class="header__link" href="#">Избранное</a>
+          </li>
+        </ul>
+
+        <!-- Блок авторизации -->
+        <div class="header__auth" aria-label="Авторизация">
+          <button
+            class="header__button header__button--login"
+            id="loginForm"
+            aria-label="Войти в аккаунт"
+          >
+            <img
+              src="./src/assets/images/icons/Login.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            Войти
+          </button>
+
+          <button
+            class="header__button header__button--register"
+            id="registerForm"
+          >
+            Зарегистрироваться
+          </button>
         </div>
       </nav>
     </header>
@@ -227,6 +235,9 @@
     </footer>
 
     <script type="module" src="./src/utils/modals/openModals.ts"></script>
-    <script type="module" src="./src/utils/getCurrentYear/getCurrentYear.ts"></script>
+    <script
+      type="module"
+      src="./src/utils/getCurrentYear/getCurrentYear.ts"
+    ></script>
   </body>
 </html>
