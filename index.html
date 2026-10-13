@@ -12,15 +12,15 @@
     <link rel="stylesheet" href="./src/assets/styles/global.css" />
     <link rel="stylesheet" href="./src/assets/fonts/fonts.css" />
 
-    <!--modal windows-->
-    <link rel="stylesheet" href="./src/components/loginForm/LoginForm.css" />
+    <!--Модалки-->
+    <link rel="stylesheet" href="./src/components/forms/loginForm/Login.css" />
     <link
       rel="stylesheet"
-      href="./src/components/loginToProfileForm/LoginToProfileForm.css"
+      href="./src/components/forms/loginToProfileForm/LoginToProfile.css"
     />
     <link
       rel="stylesheet"
-      href="./src/components/registrationForm/RegistrationForm.css"
+      href="./src/components/forms/registrationForm/Registration.css"
     />
 
     <title>Recipes</title>
@@ -50,11 +50,11 @@
                       src="./src/assets/images/icons/Login.svg"
                       alt="Войти"
                     />
-                    <a id="openLoginForm" href="#"> Войти </a>
+                    <a id="loginForm" href="#"> Войти </a>
                   </span>
                   <div class="navigation-dropdown">
                     <span>
-                      <a id="openRegisterForm" href="#">
+                      <a id="registerForm" href="#">
                         <b>Зарегистрироваться</b>
                       </a>
                     </span>
@@ -83,10 +83,10 @@
             </p>
           </div>
           <div class="initial-form-Btn">
-            <button class="add-recipe-Btn" id="openLoginToProfileForm">
+            <button class="add-recipe-Btn" id="loginToProfileForm">
               + Добавить рецепт
             </button>
-            <button class="login-Btn" id="openLoginForm">Войти</button>
+            <button class="login-Btn" id="loginForm">Войти</button>
           </div>
         </div>
       </div>
@@ -197,36 +197,36 @@
     </main>
 
     <!--модальные окна-->
-    <div class="login-form-overlay" id="loginFormOverlay" style="display: none">
-      <div id="loginForm"></div>
-    </div>
-
-    <div
-      class="auth-form-overlay"
-      id="loginToProfileFormOverlay"
-      style="display: none"
-    >
-      <div id="loginToProfileForm"></div>
+    <div class="login-form-overlay" id="loginOverlay" style="display: none">
+      <div id="login"></div>
     </div>
 
     <div
       class="registration-form-overlay"
-      id="registrationFormOverlay"
+      id="registerOverlay"
       style="display: none"
     >
-      <div id="registrationForm"></div>
+      <div id="register"></div>
+    </div>
+
+    <div
+      class="auth-form-overlay"
+      id="loginToProfileOverlay"
+      style="display: none"
+    >
+      <div id="loginToProfile"></div>
     </div>
 
     <footer>
       <nav>
         <div class="footer">
           <img src="./src/assets/images/icons/Logo.svg" alt="Логотип сайта" />
-          <b>© Recipes <span id="getDateYear"></span></b>
+          <b>© Recipes <span id="getCurrentYear"></span></b>
         </div>
       </nav>
     </footer>
 
-    <script src="./src/utils/openAllModals.js"></script>
-    <script src="./src/utils/Script.js"></script>
+    <script type="module" src="./src/utils/modals/openModals.ts"></script>
+    <script type="module" src="./src/utils/getCurrentYear/getCurrentYear.ts"></script>
   </body>
 </html>
