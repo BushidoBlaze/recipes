@@ -3,29 +3,17 @@ import { MODAL_MAPPING } from "./modals.data.ts";
 
 const activeListeners = new Map<string, (event: MouseEvent) => void>();
 
-export function modals({ modalId, overlayId, path }: Modal): void {
-  fetch(path)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Ошибка загрузки шаблона: ${path}`);
-      }
-      return response.text();
-    })
-    .then((data) => {
-      const modalElement = document.getElementById(modalId);
-      const overlayElement = document.getElementById(overlayId);
+export function modals({ modalId, overlayId, html }: Modal): void {
+  const modalElement = document.getElementById(modalId);
+  const overlayElement = document.getElementById(overlayId);
 
-      if (!modalElement || !overlayElement) {
-        return;
-      }
+  if (!modalElement || !overlayElement) {
+    return;
+  }
 
-      modalElement.innerHTML = data;
-      overlayElement.style.display = "block";
-      setupCloseButtons(modalElement, overlayElement);
-    })
-    .catch((error) => {
-      console.error("Не удалось открыть модальное окно:", error);
-    });
+  modalElement.innerHTML = html;
+  overlayElement.style.display = "block";
+  setupCloseButtons(modalElement, overlayElement);
 }
 
 export function setupCloseButtons(
@@ -68,5 +56,3 @@ export function initModalTriggers(): void {
     }
   });
 }
-
-initModalTriggers();
