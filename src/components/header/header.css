@@ -1,102 +1,102 @@
-.navigation-priority-left,
-.navigation-logo,
-.navigation-priority-right {
-    position: relative;
-    z-index: 1;
+.header {
+  position: relative;
+  z-index: 999;
+  margin: 40px 120px 0 120px;
 }
 
-/*Общие стили навигации сайта*/
-.navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 40px 120px 0 120px;
-
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.navigation a {
-    color: #9196A1;
+.header__inner {
+  display: flex;
+  align-items: center;
 }
 
-/*Стили для левой стороны навигации сайта*/
-.navigation-links ul {
-    display: flex;
-    position: relative;
-    right: 265px;
+.header__logo {
+  width: 99px;
+  height: 29px;
 }
 
-.navigation-links li {
-    margin-right: 40px;
+.header__menu {
+  display: flex;
+  gap: 40px;
+
+  position: relative;
+  left: 80px;
 }
 
-.navigation-links a {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 22px;
+.header__link {
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
 
+  color: #9196a1;
+  transition: color 0.2s ease;
 }
 
-.navigation-links a:hover {
-    color: #3A3C41;
-    font-weight: 600;
+.header__link:hover {
+  color: #43464b;
 }
 
-/*Стили для правой стороны навигации сайта*/
-.navigation-login li {
-    display: flex;
-    align-items: center;
+.header__auth {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
 }
 
-.navigation-login span,
-.navigation-login a,
-.navigation-login img,
-.navigation-dropdown,
-.navigation-dropdown b {
-    background-color: transparent;
-    cursor: pointer;
+.header__button {
+  min-width: 140px;
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+
+  color: #fdb100;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 6px;
+
+  background: none;
+  cursor: pointer;
+
+  transition: border-color 0.2s ease;
 }
 
-.navigation-login span {
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-    padding: 12px;
-    border: 2px solid #FFEFCC;
-    transition: background-color 0.3s;
+.header__button:hover {
+  border-color: #00000020;
 }
 
-.navigation-login a {
-    font-weight: 400;
-    font-size: 18px;
-    margin-left: 8px;
+.header__dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+
+  border-radius: 10px;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.navigation-login img {
-    width: 24px;
-    height: 24px;
-}
-
-.navigation-login span:hover {
-    background-color: #FFEFCC;
-}
-
-/*Выпадающее меню в секции - (Войти)*/
-.navigation-dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    z-index: 1;
-}
-
-.navigation-dropdown b {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.navigation-login:hover .navigation-dropdown {
-    display: block;
-}
-
-.navigation-dropdown span:hover {
-    background-color: #FFEFCC;
+.header__auth.is-active .header__dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }

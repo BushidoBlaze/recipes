@@ -5,12 +5,12 @@ export type Modal = {
 };
 
 export const MODAL_MAPPING: Record<string, Modal> = {
-  loginForm: {
+  headerLoginForm: {
     modalId: "login",
     overlayId: "loginOverlay",
     path: "/src/components/forms/loginForm/Login.html",
   },
-  registerForm: {
+  headerRegisterForm: {
     modalId: "register",
     overlayId: "registerOverlay",
     path: "/src/components/forms/registrationForm/Registration.html",
