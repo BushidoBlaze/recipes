@@ -1,29 +1,19 @@
 import type { Modal } from "./modals.data.ts";
 import { MODAL_MAPPING } from "./modals.data.ts";
 
-export function modals({ modalId, overlayId, path }: Modal): void {
-  fetch(path)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Ошибка загрузки шаблона: ${path}`);
-      }
-      return response.text();
-    })
-    .then((data) => {
-      const modalElement = document.getElementById(modalId);
-      const overlayElement = document.getElementById(overlayId);
+const activeListeners = new Map<string, (event: MouseEvent) => void>();
 
-      if (!modalElement || !overlayElement) {
-        return;
-      }
+export function modals({ modalId, overlayId, html }: Modal): void {
+  const modalElement = document.getElementById(modalId);
+  const overlayElement = document.getElementById(overlayId);
 
-      modalElement.innerHTML = data;
-      overlayElement.style.display = "block";
-      setupCloseButtons(modalElement, overlayElement);
-    })
-    .catch((error) => {
-      console.error("Не удалось открыть модальное окно:", error);
-    });
+  if (!modalElement || !overlayElement) {
+    return;
+  }
+
+  modalElement.innerHTML = html;
+  overlayElement.style.display = "block";
+  setupCloseButtons(modalElement, overlayElement);
 }
 
 export function setupCloseButtons(
@@ -41,12 +31,28 @@ export function setupCloseButtons(
 }
 
 // Привязка кликов к кнопкам открытия на странице
-Object.keys(MODAL_MAPPING).forEach((buttonId) => {
-  const triggerButton = document.getElementById(buttonId);
-  if (triggerButton) {
-    triggerButton.addEventListener("click", (event) => {
-      event.preventDefault();
-      modals(MODAL_MAPPING[buttonId]);
-    });
-  }
-});
+export function initModalTriggers(): void {
+  Object.keys(MODAL_MAPPING).forEach((buttonId) => {
+    const triggerButton = document.getElementById(
+      buttonId,
+    ) as HTMLButtonElement;
+
+    if (triggerButton) {
+      const oldListener = activeListeners.get(buttonId);
+      if (oldListener) {
+        triggerButton.removeEventListener(
+          "click",
+          oldListener as EventListener,
+        );
+      }
+
+      const clickListener = (event: MouseEvent): void => {
+        event.preventDefault();
+        modals(MODAL_MAPPING[buttonId]);
+      };
+
+      activeListeners.set(buttonId, clickListener);
+      triggerButton.addEventListener("click", clickListener as EventListener);
+    }
+  });
+}

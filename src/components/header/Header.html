@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="./Header.css" />
+
+<header class="header">
+  <nav class="header__nav" aria-label="Основная навигация">
+    <div class="header__inner">
+      <!-- Логотип -->
+      <a href="./index.html" class="header__logo-link">
+        <img
+          class="header__logo"
+          src="/images/icons/Logo.svg"
+          alt="Логотип сайта"
+        />
+      </a>
+
+      <!-- Список страниц -->
+      <ul class="header__menu">
+        <li class="header__menu-item">
+          <a class="header__link" href="#">Главная</a>
+        </li>
+        <li class="header__menu-item">
+          <a class="header__link" href="#">Рецепты</a>
+        </li>
+        <li class="header__menu-item">
+          <a class="header__link" href="#">Избранное</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Блок авторизации -->
+    <div class="header__auth" aria-label="Авторизация">
+      <button
+        class="header__button header__button--login"
+        id="headerLoginForm"
+        aria-label="Войти в аккаунт"
+      >
+        <img
+          src="/images/icons/Login.svg"
+          alt=""
+          aria-hidden="true"
+        />
+        Войти
+      </button>
+
+      <div class="header__dropdown-menu" id="dropdownMenu">
+        <button
+          class="header__button header__button--register"
+          id="headerRegisterForm"
+        >
+          Регистрация
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>

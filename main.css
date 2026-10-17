@@ -18,6 +18,8 @@
     width: 602px;
     height: 800px;
     border-radius: 0 0 0 200px;
+    user-select: none;
+    pointer-events: none;
 }
 
 /*Стилизация секции Заголовок + текст + кнопки*/
